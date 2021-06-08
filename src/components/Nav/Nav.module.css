@@ -1,0 +1,146 @@
+* {
+    /* add color in index.css eg: --accent: 106, 12, 210;*/
+    --colorNav: var(--accent);
+}
+
+
+.background {
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgb(var(--colorNav)) 50%, rgba(0, 0, 0, 1) 100%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.container {
+    margin: auto;
+    max-width: 1200px;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.headerImg {
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: .5rem
+}
+
+.headerDesc {
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Kalam', cursive;
+    font-weight: bold;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.listItem {
+    margin: 1rem 0;
+}
+
+.listItem:hover {
+    opacity: 1;
+}
+
+.listItemAnchor {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(200, 200, 200);
+}
+
+.activeLink {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+/* burger */
+
+.burgerMenu {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.burgerBtn {
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.burgerBtn::before,
+.burgerBtn::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.burgerBtn::before {
+    transform: translateY(-8px);
+}
+
+.burgerBtn::after {
+    transform: translateY(8px);
+}
+
+.burgerOpen .burgerBtn {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.burgerOpen .burgerBtn::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.burgerOpen .burgerBtn:after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+@media screen and (max-width: 500px) {
+    .burgerMenu {
+        display: flex;
+    }
+
+    .list {
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: -50%;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(var(--colorNav)) 100%);
+        height: calc(100vh - 4rem);
+        width: 50%;
+        transition: transform .6s ease;
+    }
+
+    .listOpen {
+        transform: translateX(-100%);
+    }
+}
+
+/* burger end */

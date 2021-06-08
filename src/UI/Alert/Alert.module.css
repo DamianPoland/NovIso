@@ -1,0 +1,84 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid transparent;
+    z-index: 101;
+    animation: showAlert 1s;
+}
+
+@keyframes showAlert {
+    0% {
+        transform: scale(0.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.alertView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertInfo {
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+}
+
+.alertName {
+    text-align: center;
+    color: red;
+    font-size: 2rem;
+    padding: 0.5rem 0;
+
+}
+
+.alertInfoDetail {
+    color: white;
+    opacity: 0.8;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.alertDetails {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.alertClose {
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: white solid 1px;
+    margin: 0 1rem 1rem 1rem;
+    cursor: pointer;
+}
+
+.alertClose:active {
+    background-color: white;
+    color: black;
+}

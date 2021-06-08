@@ -1,0 +1,58 @@
+.background {
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgb(var(--accent)) 50%, rgba(0, 0, 0, 1) 100%);
+    position: relative;
+}
+
+.container {
+    margin: 0px auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+}
+
+.text {
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+
+}
+
+.textLeft {
+    padding-right: 4px;
+}
+
+.textRight {
+    padding-left: 4px;
+}
+
+.link {
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+.link:hover {
+    opacity: 1;
+
+}
+
+.designedBy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 20px;
+    width: 20px;
+}
+
+
+@media screen and (max-width:800px) {
+    .container {
+        flex-direction: column;
+    }
+}

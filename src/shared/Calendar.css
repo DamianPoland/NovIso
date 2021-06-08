@@ -1,0 +1,140 @@
+/* all */
+* {
+    /* add color in index.css eg: --accent: 0, 200, 0;*/
+    --colorCalendar: var(--accent, 100, 100, 100);
+}
+
+/* added class name with background color */
+.react-calendar__added-class-to-tile-custom {
+    background: rgb(200, 255, 200);
+}
+
+/* container */
+.react-calendar {
+    width: 100%;
+}
+
+/* navigation container*/
+.react-calendar__navigation {
+    height: 4rem;
+    margin: 0;
+}
+
+/* navigation button */
+.react-calendar__navigation button {
+    font-size: 1.3rem;
+    color: rgb(var(--colorCalendar));
+}
+
+/* when navigation button is focused - clicked*/
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background: transparent;
+}
+
+/* when navigation button is active and hover */
+.react-calendar__navigation button:enabled:hover {
+    background: rgba(var(--colorCalendar), 0.2);
+}
+
+/* when navigation button is active and click */
+.react-calendar__navigation button:enabled:active {
+    background: rgba(var(--colorCalendar), 0.6);
+}
+
+/* day names */
+.react-calendar__month-view__weekdays {
+    font-size: 0.75rem;
+    background: rgba(var(--colorCalendar), 0.2);
+}
+
+/* day names item*/
+.react-calendar__month-view__weekdays__weekday {
+    padding: 0.5rem;
+}
+
+/* day names text decoration*/
+.react-calendar__month-view__weekdays abbr[title] {
+    text-decoration: none;
+}
+
+/* day item */
+.react-calendar__tile {
+    padding: 1rem;
+    font-size: 0.75rem;
+    color: black;
+}
+
+/* day item today*/
+.react-calendar__tile--now {
+    background: transparent;
+}
+
+/* when day item is active and hover */
+.react-calendar__tile:enabled:hover {
+    background: rgba(var(--accent, 100, 100, 100), 0.2);
+}
+
+/* when day item is active and click */
+.react-calendar__tile:enabled:active {
+    background: rgba(var(--colorCalendar), 0.6);
+}
+
+/* when day item is active - clicked and click somewere else outside */
+.react-calendar__tile--active {
+    background: rgba(var(--colorCalendar), 0.6);
+}
+
+/* when day item is focused - clicked*/
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+    background: rgba(var(--colorCalendar), 0.6);
+}
+
+/* when day item is INactive */
+.react-calendar__tile:disabled {
+    background: rgb(240, 240, 240);
+    color: rgba(150, 150, 150, 1);
+}
+
+/* when day item is weekend*/
+.react-calendar__month-view__days__day--weekend {
+    color: #d10000;
+}
+
+/* when day item is neightbour month*/
+.react-calendar__month-view__days__day--neighboringMonth {
+    /* background: white !important; */
+    color: transparent !important;
+    cursor: auto !important;
+}
+
+/* day names */
+.react-calendar__viewContainerDisplayNone {
+    display: none;
+}
+
+
+@media (max-width:500px) {
+
+    /* navigation button */
+    .react-calendar__navigation button {
+        font-size: 1rem;
+    }
+
+
+
+    /* day names item*/
+    .react-calendar__month-view__weekdays__weekday {
+        padding: 0.2rem;
+    }
+}
+
+@media (max-width:800px) {
+
+    /* day item */
+    .react-calendar__tile {
+        padding: 1rem 0.1rem;
+        font-size: 0.75rem;
+    }
+}

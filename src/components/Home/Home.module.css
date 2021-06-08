@@ -1,0 +1,349 @@
+/* all */
+
+.background {
+    margin-top: 4rem;
+    background: var(--backgroundCustom);
+    color: black;
+    min-height: calc(100vh - 10rem);
+    position: relative;
+}
+
+.black {
+    background: var(--black);
+}
+
+.yellow {
+    background: var(--yellow);
+}
+
+.blue {
+    background: var(--blue);
+}
+
+.brown {
+    background: var(--brown);
+}
+
+.green {
+    background: var(--green);
+}
+
+/* TODAY */
+
+.today {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 1rem 0 1rem;
+}
+
+
+.today_desc {
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+.today_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.2rem solid rgba(var(--accent), 1);
+    position: relative;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.today_actualStateContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.today_actualStateItemContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+
+.today_actualStateText {
+    font-size: 1rem;
+}
+
+.today_actualState {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.today_error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.today_errorDesc {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.today_errorSVG {
+    width: 4rem;
+    height: 4rem;
+    fill: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today__set {
+    padding: 0 0 0 0;
+    width: 100%;
+}
+
+.today__setList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.today__setListItem {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.1rem solid rgba(var(--accent), 1);
+}
+
+.today__setListItemcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.today__setListItemcontainerFirst {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.today__setListItemLabelColor {
+    width: 1rem;
+    height: 1rem;
+    border: solid 1px black;
+}
+
+.today__setListItemLabelText {
+    padding-left: 0.5rem;
+}
+
+.today__setListItemSwitch {
+    transform: rotate(90deg);
+    padding: 1rem 0;
+}
+
+.today__setListItemLabelTextSVG {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+
+/* CALENDAR */
+
+.calendar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 1rem;
+}
+
+.calendar_desc {
+    text-align: center;
+    padding: 0 0 1rem 0;
+    font-size: 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.calendar_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.2rem solid rgba(var(--accent), 1);
+    position: relative;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+
+.calendar_date {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar_dateContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* colors*/
+.calendar__container {
+    width: 100%;
+    height: 100%;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.calendar__item {
+    margin: 0.1rem;
+    width: 20%;
+    height: 100%;
+}
+
+
+
+/* MENU */
+
+
+.menu {
+    padding: 2rem 0 0 0;
+    width: 100%;
+}
+
+.menu_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.menu_desc {
+    font-size: 1rem;
+}
+
+.menu_button {
+    padding: 0.2rem 2rem;
+    font-size: 1rem;
+    border: 0.15rem solid rgba(var(--accent), 1);
+    outline: none;
+}
+
+.menu_button:hover {
+    background: rgba(var(--accent), 0.1);
+    box-shadow: 0 0 10px rgba(var(--accent), 1);
+
+}
+
+.menu_button:active {
+    background: rgba(var(--accent), 1);
+    color: white;
+    box-shadow: 0 0 20px rgba(var(--accent), 1);
+}
+
+.menu_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+.menu_listItem {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid rgba(var(--accent), 1);
+}
+
+
+.menu_listItemInput {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.menu_listItemLabel {
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.menu_listItemLabelColor {
+    width: 1rem;
+    height: 1rem;
+    border: solid 1px black;
+}
+
+.menu_listItemLabelText {
+    padding-left: 0.5rem;
+}
+
+
+
+@media (min-width:600px) {
+
+    .today_actualStateItemContainer {
+        padding: 0 1rem;
+    }
+
+    .today__setListItemcontainerFirst {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    
+    .calendar {
+        padding: 4rem 2rem;
+    }
+
+    .calendar_container {
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+
+    .menu {
+        width: 60%;
+    }
+}
+
+@media (min-width:1000px) {
+    .today {
+        padding: 4rem 2rem 0 2rem;
+    }
+
+    .today_container {
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+
+    .today__set {
+        width: 60%;
+    }
+}

@@ -1,0 +1,67 @@
+/* base in index.css */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  font-size: 100%;
+  overflow-x: hidden;
+  background: var(--backgroundCustom);
+  color: white;
+
+  /* scrollbar ONLY for mozilla, scrollbar-width - "auto" or "thin"  */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) gray;
+
+}
+
+:root {
+  /* colors */
+
+  --accent: 0, 100, 0;
+  /* #6a0cd2 */
+  /* color: #00c800; */
+
+  --accentDark: 85, 9, 168;
+  /* #5509a8 */
+
+  --backgroundCustom: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(220, 220, 220) 50%, rgb(255, 255, 255) 100%);
+
+
+  --black: linear-gradient(to right, #000000, #000000);
+  --yellow: linear-gradient(to right, #FFFF00, #FFFF00);
+  --blue: linear-gradient(to right, #0000FF, #0000FF);
+  --brown: linear-gradient(to right, #8b4513, #8b4513);
+  --green: linear-gradient(to right, #00FF00, #00FF00);
+}
+
+
+/* custom scroll bar in body (mobile not work) */
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent), 0.6);
+  border-radius: 999px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+  html,
+  body {
+    font-size: 75%;
+  }
+}
