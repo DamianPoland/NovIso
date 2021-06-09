@@ -22,7 +22,7 @@ function App() {
 
   const [isLogin, setIsLogin] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
-  const [serialNumber, setSerialNumber] = useState("")
+  const [_, setSerialNumber] = useState("")
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {

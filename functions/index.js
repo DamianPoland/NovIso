@@ -70,6 +70,14 @@ exports.addSerialNumberToUser = functions.https.onCall(async (data, context) => 
 
 
 
+
+
+
+// PUT error bariera zablokowana => use this function on front
+// axios.post("https://us-central1-novisopl.cloudfunctions.net/novisoErrorBarieraZablokowana", { adminDamianGmail: true })
+//     .then(resp =>  console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response.data) )
+
 // typ funkcji: onRequest, type: POST Bariera zablokowana error dla danego użytkownika na podstawie numeru seryjnego => OK
 // request.body = { userSerialNumber: false } lub request.body = { userSerialNumber: true } 
 exports.novisoErrorBarieraZablokowana = functions.https.onRequest((request, response) => {
@@ -86,6 +94,14 @@ exports.novisoErrorBarieraZablokowana = functions.https.onRequest((request, resp
 
 
 
+
+
+
+// GET all users setings for today => use this function on front
+// axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetManualForToday")
+//     .then(resp => console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response.data))
+
 // typ funkcji: onRequest, type: GET, get all users seting for today => OK
 exports.novisoGetManualForToday = functions.https.onRequest((request, response) => {
     cors(request, response, async () => {
@@ -100,6 +116,21 @@ exports.novisoGetManualForToday = functions.https.onRequest((request, response) 
 })
 
 
+
+
+// PUT one user setings for today => use this function on front
+// const requestObject = {
+//     adminDamianGmail: {
+//         brown: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: false },
+//         black: { isColorOpen: true, isNoBucketError: false, isRequestChangeColorWaiting: false },
+//         yellow: { isColorOpen: false, isNoBucketError: true, isRequestChangeColorWaiting: true },
+//         blue: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: true },
+//         green: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: true },
+//     }
+// }
+// axios.put("https://us-central1-novisopl.cloudfunctions.net/novisoPutManualForToday", requestObject)
+//     .then(resp => console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response?.data))
 
 // typ funkcji: onRequest, type: PUT, put all seting for one user for today  => OK
 // request.body = {
@@ -125,6 +156,15 @@ exports.novisoPutManualForToday = functions.https.onRequest((request, response) 
     })
 })
 
+
+
+
+
+
+// GET array of all collections with serial numbers, return array of all serial numbers in DB => use this function on front
+// axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetAllCalendarCollections")
+//     .then(resp => console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response?.data))
 
 // typ funkcji: onRequest, type: GET, get all serial number collections, return array of all serial numbers in DB => OK
 exports.novisoGetAllCalendarCollections = functions.https.onRequest((request, response) => {
@@ -153,6 +193,17 @@ exports.novisoGetAllCalendarCollections = functions.https.onRequest((request, re
 
 
 
+
+
+
+
+
+
+// GET one user calendar 2 month data, serial number in query => use this function on front
+// axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetMonthCalendarUserData?userSerialNumber=adminDamianGmail")
+//     .then(resp => console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response?.data))
+
 // typ funkcji: onRequest, type: GET, get one user document with 2 month calendar data, serial number in query => OK
 // request.query = { userSerialNumber: "serialNumber" }  nafrońcie dodać po endpoincie query np: https://us-central1-novisopl.cloudfunctions.net/novisoGetMonthCalendarUserData?userSerialNumber=serialNumber
 exports.novisoGetMonthCalendarUserData = functions.https.onRequest((request, response) => {
@@ -176,7 +227,19 @@ exports.novisoGetMonthCalendarUserData = functions.https.onRequest((request, res
 })
 
 
-
+// PUT today calendar user data => use this function on front
+// const requestObj = {
+//     adminDamianGmail: {
+//         brown: { isGarbageAdded: true, isGarbageTaken: false },
+//         black: { isGarbageAdded: true, isGarbageTaken: true },
+//         yellow: { isGarbageAdded: true, isGarbageTaken: true },
+//         blue: { isGarbageAdded: true, isGarbageTaken: true },
+//         green: { isGarbageAdded: true, isGarbageTaken: true },
+//     }
+// }
+// axios.put("https://us-central1-novisopl.cloudfunctions.net/novisoPutTodayCalendarUserData", requestObj)
+//     .then(resp => console.log("resp: ", resp))
+//     .catch(err => console.log("err.response.data: ", err.response?.data))
 
 // typ funkcji: onRequest, type: PUT, put today calendar user data => OK
 // request.body = {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import style from './Admin.module.css'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 //firebase
@@ -52,77 +52,6 @@ const Admin = () => {
     }
 
 
-
-
-
-    const callApi = () => {
-
-
-
-        // PUT error bariera zablokowana => OK
-        // axios.post("https://us-central1-novisopl.cloudfunctions.net/novisoErrorBarieraZablokowana", { adminDamianGmail: true })
-        //     .then(resp =>  console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response.data) )
-
-
-
-        // GET all users setings for today => OK
-        // axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetManualForToday")
-        //     .then(resp => console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response.data))
-
-
-
-        // PUT one user setings for today  => OK
-        // const requestObject = {
-        //     adminDamianGmail: {
-        //         brown: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: false },
-        //         black: { isColorOpen: true, isNoBucketError: false, isRequestChangeColorWaiting: false },
-        //         yellow: { isColorOpen: false, isNoBucketError: true, isRequestChangeColorWaiting: true },
-        //         blue: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: true },
-        //         green: { isColorOpen: false, isNoBucketError: false, isRequestChangeColorWaiting: true },
-        //     }
-        // }
-        // axios.put("https://us-central1-novisopl.cloudfunctions.net/novisoPutManualForToday", requestObject)
-        //     .then(resp => console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response?.data))
-
-
-
-        // GET array of all collections with serial numbers, return array of all serial numbers in DB
-        // axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetAllCalendarCollections")
-        //     .then(resp => console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response?.data))
-
-
-
-        // GET one user calendar 2 month data, serial number in query
-        // axios.get("https://us-central1-novisopl.cloudfunctions.net/novisoGetMonthCalendarUserData?userSerialNumber=adminDamianGmail")
-        //     .then(resp => console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response?.data))
-
-
-        // PUT today calendar user data
-        // const requestObj = {
-        //     adminDamianGmail: {
-        //         brown: { isGarbageAdded: true, isGarbageTaken: false },
-        //         black: { isGarbageAdded: true, isGarbageTaken: true },
-        //         yellow: { isGarbageAdded: true, isGarbageTaken: true },
-        //         blue: { isGarbageAdded: true, isGarbageTaken: true },
-        //         green: { isGarbageAdded: true, isGarbageTaken: true },
-        //     }
-        // }
-        // axios.put("https://us-central1-novisopl.cloudfunctions.net/novisoPutTodayCalendarUserData", requestObj)
-        //     .then(resp => console.log("resp: ", resp))
-        //     .catch(err => console.log("err.response.data: ", err.response?.data))
-
-    }
-
-
-
-
-
-
     return (
         <section className={style.admin}>
             <label className={style.admin__label} htmlFor="number">Wpisz numer seryjny urządzenia:</label>
@@ -136,8 +65,6 @@ const Admin = () => {
                     </div>
                 )
             })}
-
-            <button onClick={callApi}>Call API</button>
         </section>
     )
 }

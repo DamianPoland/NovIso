@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import style from './Home.module.css'
-import { firestore, functions } from '../../shared/fire'
+import { firestore } from '../../shared/fire'
 
 // components
 import LoginRegisterFirebaseUI from '../LoginRegisterFirebaseUI/LoginRegisterFirebaseUI'
@@ -98,7 +98,6 @@ const Home = ({ isLogin }) => {
                     return
                 }
 
-                console.log("loadededTodayFromCalendar: ", resp.data()[docNameToday]);
                 // save today day from callendar
                 setLoadededTodayFromCalendar(resp.data()[docNameToday])
 
@@ -121,8 +120,6 @@ const Home = ({ isLogin }) => {
 
                 // return when document not exist or exist in DB but has no data
                 if (!resp.data() || Object.keys(resp.data()).length === 0) { return }
-
-                console.log("listenerErrorBlocked: ", resp.data()[serialNumber]);
 
                 // save list of all days in month to state
                 setTodayErrorBlocked(resp.data()[serialNumber])
@@ -156,8 +153,6 @@ const Home = ({ isLogin }) => {
                     return
                 }
 
-                console.log("listenerTodaycolors: ", resp.data()[serialNumber]);
-
                 // save list of all days in month to state
                 setTodayColors(resp.data()[serialNumber])
 
@@ -189,8 +184,6 @@ const Home = ({ isLogin }) => {
                     setLoadededMonth({})
                     return
                 }
-
-                console.log("resp.data(): ", resp.data())
 
                 // save list of all days in month with colors to state
                 setLoadededMonth(resp.data())
@@ -383,7 +376,7 @@ const Home = ({ isLogin }) => {
                                 }
 
                                 <div className={style.today__set}>
-                                    <p className={style.today_desc}>Aktualny stan (opóźnienie max 30s):</p>
+                                    <p className={style.today_desc}>Sterowanie manualne (opóźnienie max 30s):</p>
                                     <div className={style.today__setList}>
                                         {colorsArray.map(item => {
                                             return (
@@ -449,7 +442,7 @@ const Home = ({ isLogin }) => {
                                             maxDetail="month"
                                             minDetail="month"
                                             maxDate={new Date(`${new Date().getFullYear() + 1}, ${new Date().getMonth() + 1}, ${new Date().getDate()}`)}
-                                            minDate={new Date(`${new Date().getFullYear()}, ${new Date().getMonth() + 1}, ${new Date().getDate()}`)} //TODO ${new Date().getDate() + 1
+                                            minDate={new Date(`${new Date().getFullYear()}, ${new Date().getMonth() + 1}, ${new Date().getDate() + 1}`)}
                                             onActiveStartDateChange={handlerActiveDateChange}
                                             onClickDay={(value, event) => setDisplayedDayHandler(value.getDate())}
                                             showFixedNumberOfWeeks={true}
